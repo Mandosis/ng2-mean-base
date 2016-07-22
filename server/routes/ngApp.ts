@@ -1,5 +1,4 @@
 import * as express from 'express';
-import * as winston from 'winston';
 
 // Angular 2 Universal
 import {provideRouter} from '@angular/router';
@@ -15,8 +14,7 @@ import {
 } from 'angular2-universal';
 
 // client root component
-import {App, routes} from '../client';
-
+import {App, routes} from '../client/main';
 
 const router = express.Router();
 
