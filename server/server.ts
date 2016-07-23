@@ -1,7 +1,7 @@
 import 'angular2-universal/polyfills';
 import * as express from 'express';
 import * as helmet from 'helmet';
-import * as bodyParser from 'bodyParser';
+import * as bodyParser from 'body-parser';
 import * as winston from 'winston';
 import * as database from './database';
 import * as router from './routes/router';

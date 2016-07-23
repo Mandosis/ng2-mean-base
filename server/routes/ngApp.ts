@@ -18,7 +18,7 @@ import {App, routes} from '../client/main';
 
 const router = express.Router();
 
-function ngApp(req, res) {
+function ngApp(req: any, res: any) {
   let baseUrl = '/';
   let url = req.originalUrl || '/';
 
