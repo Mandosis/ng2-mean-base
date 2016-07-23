@@ -6,7 +6,7 @@ import * as winston from 'winston';
 import * as database from './database';
 import * as router from './routes/router';
 
-const app = express();
+const app: any = express();
 
 /**
  * Connect to database
@@ -48,7 +48,7 @@ app.use('/', router);
  * Start a webserver on a port specified by an environment variable
  * Default: 3000
  */
-let server = app.listen(process.env.PORT || 3000, () => {
-  let port = server.address().port;
+let server: any = app.listen(process.env.PORT || 3000, () => {
+  let port: number = server.address().port;
   winston.info('Listening on port', port);
 });
