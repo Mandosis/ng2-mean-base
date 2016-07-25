@@ -29,10 +29,18 @@
     "express": "^4.14.0",
     "helmet": "^2.1.1",
     "ie-shim": "^0.1.0",
+    "moment": "^2.14.1",
     "mongoose": "^4.5.5",
     "preboot": "^4.0.1",
     "rxjs": "5.0.0-beta.6",
     "winston": "^2.2.0",
     "zone.js": "~0.6.12"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-typescript": "^2.13.6",
+    "gulp-watch": "^4.3.8"
   }
 }
