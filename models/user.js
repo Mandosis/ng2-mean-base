@@ -1,14 +1,16 @@
-import * as mongoose from 'mongoose';
-import * as bcrypt from 'bcrypt';
+"use strict";
+
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const Schema = mongoose.Schema;
 const SALT_WORK_FACTOR = 10;
 
-let toLower: any = (value: string) => {
+let toLower = (value) => {
   return value.toLowerCase();
 }
 
-let userSchema: any = new Schema({
+let userSchema = new Schema({
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
@@ -20,7 +22,7 @@ let userSchema: any = new Schema({
 /*
  * Encrypt password before saving to the database
  */
-userSchema.pre('save', function(next: any) {
+userSchema.pre('save', function(next) {
   let user = this;
 
   // If the password was not changed, do not continue
@@ -29,12 +31,12 @@ userSchema.pre('save', function(next: any) {
   }
 
   // Create salt for hash
-  bcrypt.genSalt(SALT_WORK_FACTOR, function(err: any, salt: any) {
+  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
     if (err) {
       return next(err);
     }
 
-    bcrypt.hash(user.password, salt, function(err: any, hash: any) {
+    bcrypt.hash(user.password, salt, function(err, hash) {
       if (err) {
         return next(err);
       }
@@ -50,8 +52,8 @@ userSchema.pre('save', function(next: any) {
 /*
  * Compare the provided password against the database
  */
-userSchema.methods.comparePassword = function(candidatePassword: string, done: any) {
-  bcrypt.compare(candidatePassword, this.password, function(err: any, isMatch: any) {
+userSchema.methods.comparePassword = function(candidatePassword, done) {
+  bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
     if (err) {
       return done(err);
     } else {
