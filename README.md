@@ -6,4 +6,4 @@ This repository serves as a starting point for creating a MEAN Stack application
 * Create build pipeline
 * Write gulpfile
 * Create base for client side angular 2
-* Create basic user model for mongoose with bcrypt
+* ~~Create basic user model for mongoose with bcrypt~~ Done
