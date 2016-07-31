@@ -6,7 +6,7 @@ const ngRouter = require('@angular/router');
 const universal = require('angular2-universal');
 
 // client root component
-const main = require('../../client/app/app.component');
+const main = require('../public/main.bundle');
 
 function ngApp(req, res) {
     var baseUrl = '/';

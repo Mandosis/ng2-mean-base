@@ -1,7 +1,7 @@
 "use strict";
 
 const express = require('express');
-// const ngApp = require('./ngApp');
+const ngApp = require('./ngApp');
 
 let router = express.Router();
 
@@ -15,6 +15,6 @@ let router = express.Router();
  * Wildcard route for Angular 2 Universal
  * Warning: Keep at the very bottom
  */
-// router.get('/*', ngApp);
+router.get('/*', ngApp);
 
 module.exports = router;

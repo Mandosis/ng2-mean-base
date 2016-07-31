@@ -41,7 +41,7 @@ app.use(helmet());
 /**
  * Router
  */
-// app.use('/', router);
+app.use('/', router);
 
 /**
  * Start a webserver on a port specified by an environment variable
